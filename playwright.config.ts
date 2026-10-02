@@ -12,6 +12,9 @@
 
   import { defineConfig, devices } from '@playwright/test';
 
+// Load local environment variables from .env if present (Node 20.12+).
+try { process.loadEnvFile(); } catch { /* no .env file */ }
+
 export default defineConfig({
   testDir: './tests',
 
